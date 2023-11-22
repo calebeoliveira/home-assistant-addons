@@ -9,6 +9,7 @@ server {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header Origin "";
+        proxy_set_header Accept-Encoding "";
         proxy_pass {{ .destination }};
         proxy_redirect '/' $http_x_ingress_path/;
         sub_filter 'href="/' 'href="$http_x_ingress_path/';
