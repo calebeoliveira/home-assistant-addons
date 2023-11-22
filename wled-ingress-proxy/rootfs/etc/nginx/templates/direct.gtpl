@@ -17,7 +17,4 @@ server {
 
         sub_filter_once off;
     }
-
-
-
 }

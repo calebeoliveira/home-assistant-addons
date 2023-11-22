@@ -1,7 +1,7 @@
 ---
-name: Ingress proxy
-version: 0.2.4
-slug: ingress_proxy
+name: WLED Proxy
+version: 0.0.1
+slug: wled_ingress_proxy
 description: nginx reverse proxy to expose network resources through HA ingress
 webui: "[PROTO:ssl]://[HOST]:[PORT:80]"
 init: false
@@ -15,6 +15,6 @@ arch:
 map:
   - ssl
 options:
-  destination: "http://192.168.0.1"
+  destination: "http://10.11.11.39"
 schema:
   destination: str?
