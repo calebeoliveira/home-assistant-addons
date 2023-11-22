@@ -14,6 +14,7 @@ server {
         sub_filter 'href="/' 'href="$http_x_ingress_path/';
         sub_filter '<script src="/' '<script src="$http_x_ingress_path/';
         sub_filter "top.location.href='" "top.location.href='$http_x_ingress_path";
+        sub_filter '(loc ? locproto + "//" + locip : "")' '"$http_x_ingress_path"'
 
         sub_filter_once off;
     }
