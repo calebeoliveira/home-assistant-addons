@@ -5,15 +5,15 @@ server {
 
     location / {
         proxy_pass {{ .destination }};
-        absolute_redirect off;
+        #absolute_redirect off;
 
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header Origin "";
-        proxy_set_header Accept-Encoding "";
+        #proxy_set_header Host $host;
+        #proxy_set_header X-Real-IP $remote_addr;
+        #proxy_set_header Origin "";
+        #proxy_set_header Accept-Encoding "";
 
         sub_filter '(loc ? locproto + "//" + locip : "")' "'$http_x_ingress_path'";
 
-        sub_filter_once off;
+        #sub_filter_once off;
     }
 }
